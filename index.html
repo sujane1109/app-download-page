@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>智慧生活 App 下載</title>
+    <title>App 下載</title>
     <style>
         :root {
             --primary-color: #007aff; 
@@ -172,8 +172,8 @@
 
     <div class="container">
         <div class="app-icon"></div>
-        <h1 id="mainTitle">歡迎體驗智慧生活</h1>
-        <p class="subtitle" id="mainSubtitle">立即下載 App，開啟您的全新智能產品體驗。</p>
+        <h1 id="mainTitle">歡迎體驗</h1>
+        <p class="subtitle" id="mainSubtitle">立即下載 App，開啟您的全新體驗。</p>
 
         <div id="referralBox" class="referral-box">
             <div class="referral-title">🎁 收到來自好友的專屬邀請</div>
@@ -214,7 +214,7 @@ document.addEventListener("DOMContentLoaded", function() {
             referralBox.style.display = "block";
 
             // 拼湊出要給 App 識別的特殊格式字串
-            const textToCopy = `【智慧生活App好友邀請】您的專屬邀請碼：[SHARE_${cleanCode}] (打開App將自動識別填入)`;
+            const textToCopy = `【App好友邀請】您的專屬邀請碼：[SHARE_${cleanCode}] (打開App將自動識別填入)`;
 
             // ✨ 優化：使用安全環境防卡死包裹自動複製
             setTimeout(function() {
