@@ -2,7 +2,7 @@
   {
     "relation": ["delegate_permission/common.handle_all_urls"],
     "target": {
-      "namespace": "tinysteps",
+      "namespace": "android_app",
       "package_name": "com.example.tinysteps",
       "sha256_cert_fingerprints": [
         "72:CD:03:8C:38:F6:E7:5E:D2:DF:A8:19:AE:53:9D:90:8B:E8:E9:29:A6:FB:4F:FA:11:B9:6A:AC:70:A4:2D:57"
