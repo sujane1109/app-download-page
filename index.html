@@ -14,11 +14,7 @@
             --text-muted: #718096;
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -53,25 +49,9 @@
             box-shadow: 0 8px 16px rgba(0, 122, 255, 0.2);
         }
 
-        .app-icon::after {
-            content: "App";
-            color: white;
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        h1 {
-            font-size: 22px;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-
-        .subtitle {
-            font-size: 14px;
-            color: var(--text-muted);
-            margin-bottom: 24px;
-            line-height: 1.5;
-        }
+        .app-icon::after { content: "App"; color: white; font-size: 24px; font-weight: bold; }
+        h1 { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
+        .subtitle { font-size: 14px; color: var(--text-muted); margin-bottom: 24px; line-height: 1.5; }
 
         .referral-box {
             display: none; 
@@ -82,93 +62,45 @@
             margin-bottom: 24px;
         }
 
-        .referral-title {
-            font-size: 12px;
-            color: var(--text-muted);
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
+        .referral-title { font-size: 12px; color: var(--text-muted); font-weight: 600; margin-bottom: 8px; }
+        .code-row { display: flex; align-items: center; justify-content: space-between; background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 8px 12px; }
+        .invite-code { font-size: 18px; font-weight: 700; color: var(--primary-color); letter-spacing: 1px; }
+        .copy-btn { background-color: var(--primary-color); color: white; border: none; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-weight: 600; cursor: pointer; }
 
-        .code-row {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background: white;
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            padding: 8px 12px;
-        }
-
-        .invite-code {
-            font-size: 18px;
-            font-weight: 700;
-            color: var(--primary-color);
-            letter-spacing: 1px;
-        }
-
-        .copy-btn {
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            padding: 6px 14px;
-            border-radius: 6px;
-            font-size: 13px;
-            font-weight: 600;
-            cursor: pointer;
-        }
-
-        .download-title {
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--text-muted);
-            margin-bottom: 12px;
-            text-align: left;
-            padding-left: 4px;
-        }
-
-        .btn-group {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .store-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            width: 100%;
-            height: 52px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 15px;
-        }
-
+        .download-title { font-size: 13px; font-weight: 600; color: var(--text-muted); margin-bottom: 12px; text-align: left; padding-left: 4px; }
+        .btn-group { display: flex; flex-direction: column; gap: 12px; }
+        .store-btn { display: flex; align-items: center; justify-content: center; gap: 12px; width: 100%; height: 52px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 15px; }
         .btn-ios { background-color: #000000; color: #ffffff; }
         .btn-android { background-color: #ffffff; color: #1f2937; border: 1px solid #e5e7eb; }
         .btn-ios::before { content: ""; font-size: 22px; margin-bottom: 4px; }
         .btn-android::before { content: "🤖"; font-size: 18px; }
 
         .toast {
-            position: fixed;
-            bottom: -60px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: rgba(31, 41, 55, 0.9);
-            color: white;
-            padding: 12px 24px;
-            border-radius: 50px;
-            font-size: 14px;
-            font-weight: 500;
-            z-index: 9999;
-            transition: bottom 0.3s ease-in-out;
+            position: fixed; bottom: -60px; left: 50%; transform: translateX(-50%);
+            background-color: rgba(31, 41, 55, 0.9); color: white; padding: 12px 24px;
+            border-radius: 50px; font-size: 14px; font-weight: 500; z-index: 9999; transition: bottom 0.3s ease-in-out;
         }
-
         .toast.show { bottom: 40px; }
+
+        /* ====== ✨ 全新加碼：TG/LINE 專用滿版跳出提示遮罩 ====== */
+        .overlay {
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(0, 0, 0, 0.85); color: white; z-index: 10000;
+            padding: 30px; text-align: right; box-sizing: border-box;
+        }
+        .overlay-arrow { font-size: 48px; color: #3ddc84; margin-bottom: 10px; animation: bounce 1s infinite alternate; }
+        .overlay-text { text-align: center; margin-top: 40px; font-size: 18px; line-height: 1.6; font-weight: bold; }
+        .overlay-sub { text-align: center; margin-top: 15px; font-size: 14px; color: #cbd5e1; }
+        @keyframes bounce { from { transform: translateY(0); } to { transform: translateY(-10px); } }
     </style>
 </head>
 <body>
+
+    <div id="browserOverlay" class="overlay">
+        <div class="overlay-arrow">↗</div>
+        <div class="overlay-text">請點擊右上角的三個點「···」<br>並選擇【在瀏覽器開啟】</div>
+        <div class="overlay-sub">才能順利啟動 App 並自動帶入邀請碼喔！</div>
+    </div>
 
     <div class="container">
         <div class="app-icon"></div>
@@ -194,6 +126,16 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
+    // 1. 偵測是否在 Telegram 或 LINE 的內建瀏覽器中
+    const ua = navigator.userAgent.toLowerCase();
+    const isTelegram = ua.indexOf('telegram') > -1;
+    const isLine = ua.indexOf('line') > -1;
+    
+    // 如果在 TG 或 LINE 裡，且網址沒有帶 openExternalBrowser=1（LINE 專用參數），就跳出遮罩
+    if ((isTelegram || isLine) && window.location.search.indexOf('openExternalBrowser') === -1) {
+        document.getElementById('browserOverlay').style.display = 'block';
+    }
+
     try {
         const urlParams = new URLSearchParams(window.location.search);
         const inviteCode = urlParams.get('invitecode');
@@ -207,71 +149,47 @@ document.addEventListener("DOMContentLoaded", function() {
         if (inviteCode && inviteCode.trim() !== "") {
             const cleanCode = inviteCode.trim();
             
-            // 填入基礎資料
             mainTitle.innerText = "接受好友邀請";
             mainSubtitle.innerText = "您的好友送您一份專屬好禮！請下載 App 登入領取。";
             inviteCodeDisplay.innerText = cleanCode;
             referralBox.style.display = "block";
 
-            // 拼湊出要給 App 識別的特殊格式字串
             const textToCopy = `【App好友邀請】您的專屬邀請碼：[SHARE_${cleanCode}] (打開App將自動識別填入)`;
 
-            // ✨ 優化：使用安全環境防卡死包裹自動複製
+            // 背景自動複製
             setTimeout(function() {
                 try {
                     if (navigator.clipboard && navigator.clipboard.writeText) {
                         navigator.clipboard.writeText(textToCopy).then(() => {
                             showToast("已自動為您複製好友邀請碼！");
-                        }).catch(err => {
-                            console.log("自動複製被瀏覽器安全性攔截，需使用者手動點擊。");
                         });
                     }
-                } catch (e) {
-                    console.log("自動複製環境不支援。");
-                }
+                } catch (e) {}
             }, 300);
 
-            // 使用者主動點擊 [複製] 按鈕（手機瀏覽器 100% 支援主動點擊）
             copyBtn.addEventListener('click', function() {
                 executeCopy(textToCopy, "邀請碼已複製，下載後打開將自動填入！");
             });
         }
-    } catch (globalError) {
-        console.error("主要邏輯發生錯誤，但畫面已安全放行：", globalError);
-    }
+    } catch (globalError) {}
 
     function executeCopy(text, successMessage) {
         if (navigator.clipboard && navigator.clipboard.writeText) {
-            navigator.clipboard.writeText(text).then(() => {
-                showToast(successMessage);
-            }).catch(err => {
-                fallbackCopy(text, successMessage);
-            });
-        } else {
-            fallbackCopy(text, successMessage);
-        }
+            navigator.clipboard.writeText(text).then(() => { showToast(successMessage); }).catch(err => { fallbackCopy(text, successMessage); });
+        } else { fallbackCopy(text, successMessage); }
     }
 
     function fallbackCopy(text, successMessage) {
         const textArea = document.createElement("textarea");
-        textArea.value = text;
-        textArea.style.position = "fixed"; 
-        document.body.appendChild(textArea);
-        textArea.focus();
-        textArea.select();
-        try {
-            document.execCommand('copy');
-            showToast(successMessage);
-        } catch (err) {
-            showToast("複製失敗，請手動複製代碼");
-        }
+        textArea.value = text; textArea.style.position = "fixed"; 
+        document.body.appendChild(textArea); textArea.focus(); textArea.select();
+        try { document.execCommand('copy'); showToast(successMessage); } catch (err) { showToast("複製失敗，請手動複製代碼"); }
         document.body.removeChild(textArea);
     }
 
     function showToast(message) {
         const toast = document.getElementById('toast');
-        toast.innerText = message;
-        toast.classList.add('show');
+        toast.innerText = message; toast.classList.add('show');
         setTimeout(() => { toast.classList.remove('show'); }, 3000);
     }
 });
